@@ -389,7 +389,7 @@ class CustomLocationManager(private val mapView: MapView) : Overlay(), IMyLocati
         mDirectionArrowCenterY = mDirectionArrowBitmap!!.getHeight() * pVertical
     }
 
-    fun runOnFirstFix(runnable: Runnable?): Boolean {
+    fun runOnFirstFix(runnable: Runnable): Boolean {
         return if (currentLocation != null) {
             val t = Thread(runnable)
             t.setName(this.javaClass.getName() + "#runOnFirstFix")
